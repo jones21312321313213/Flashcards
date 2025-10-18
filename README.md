@@ -21,6 +21,9 @@ Then install dependencies:
 pip install -r requirements.txt
 
 
+Then change directory:
+
+cd flashcards
 
 Then migrate:
 
