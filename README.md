@@ -1,10 +1,8 @@
 inig clone nimo sa repo do these steps:
 
-
-Creating a virtual environment
+1)create a virtual environment(.venv):
 
 WINDOWS:
-
 python -m venv .venv
 
 .venv\Scripts\activate
@@ -15,21 +13,25 @@ python3 -m venv .venv
 
 source .venv/bin/activate
 
-
-Then install dependencies:
+2)install dependencies:
 
 pip install -r requirements.txt
 
-
-Then change directory:
-
-cd flashcards
-
-Then migrate:
-
-(python/py) manage.py migrate 
+3)Create the database ("dbflashcards") in your local workbench and change the settings in flashcards to match your workbench user & pass
 
 
+4)Then run migrations:
 
-make sure to create dbflashcards in your local workbench
+(python/py) manage.py migrate
+
+5) create a super user:
+
+python manage.py createsuperuser
+
+6)Runserver:
+
+python manage.py createsuperuser
+
+
+
 
