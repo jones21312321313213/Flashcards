@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'notification',
     'user',
-    'card'
+    'card',
+    'deck',
+    'folder'
 ]
 
 MIDDLEWARE = [

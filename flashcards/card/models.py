@@ -13,23 +13,25 @@ class Card(models.Model):
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.card_type + " " + self.cardId + " " + self.created_at + " " + self.next_review + " " + self.input_field
+        return f"{self.cardId} {self.input_field} {self.created_at} {self.next_review} {self.user.username} {self.deck.name}"
+
 
 class Basic(Card):
     back_field = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.back_field
+        return f": {self.input_field} -> {self.back_field}"
+
 
 class Identification(Card):
     hidden_field = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.hidden_field
+        return f" {self.input_field}  {self.hidden_field})"
+
 
 class ImageOcclusion(Card):
     img_path = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.img_path
-
+        return f"{self.input_field} {self.img_path}"
