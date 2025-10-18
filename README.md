@@ -3,12 +3,12 @@ inig clone nimo sa repo do these steps:
 
 Creating a virtual environment
 
-windows:
+WINDOWS:
 
 python -m venv .venv
 .\.venv\Scripts\activate
 
-mac/linux:
+MAC/LINUX:
 
 python3 -m venv .venv
 source .venv/bin/activate
