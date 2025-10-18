@@ -30,11 +30,3 @@ python manage.py migrate
 
 make sure to create dbflashcards in your local workbench
 
-
-
-
-This is <span style="color:red">red</span> text.
-
-This is <span style="color:green">green</span> text.
-
-This is <span style="color:#00bfff">sky blue</span> text.
