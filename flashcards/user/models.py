@@ -9,3 +9,6 @@ class User(models.Model):
     password = models.CharField(max_length=50,null = False)
     email = models.TextField(max_length=100,null = False)
     created_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.userId + " " + self.username + " " + self.password + " " + self.email + " " + self.created_at
