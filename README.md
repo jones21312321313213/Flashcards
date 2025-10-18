@@ -7,7 +7,7 @@ WINDOWS:
 
 python -m venv .venv
 
-.\.venv\Scripts\activate
+.venv\Scripts\activate
 
 MAC/LINUX:
 
