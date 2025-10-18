@@ -27,7 +27,7 @@ cd flashcards
 
 Then migrate:
 
-python manage.py migrate
+(python/py) manage.py migrate 
 
 
 
