@@ -1,8 +1,8 @@
 from django.db import models
 
-from flashcards.card.models import Card
-from flashcards.user.models import User
 
+from user.models import User
+from card.models import Card
 
 # Create your models here.
 class Notification(models.Model):
