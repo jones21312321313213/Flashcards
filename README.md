@@ -19,18 +19,22 @@ pip install -r requirements.txt
 
 3)Create the database ("dbflashcards") in your local workbench and change the DATABASES in settings.py on the flashcards dir to match your workbench user & pass
 
+4)change directory:
 
-4)Then run migrations:
+cd flashcards
+
+
+5)Then run migrations:
 
 (python/py) manage.py migrate
 
-5)create a super user:
+6)create a super user:
 
 python manage.py createsuperuser
 
-6)Runserver:
+7)Runserver:
 
-python manage.py createsuperuser
+python manage.py runserver
 
 
 
