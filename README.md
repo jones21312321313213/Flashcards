@@ -3,6 +3,7 @@ inig clone nimo sa repo do these steps:
 1)create a virtual environment(.venv):
 
 WINDOWS:
+
 python -m venv .venv
 
 .venv\Scripts\activate
