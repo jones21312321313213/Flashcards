@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 
@@ -15,4 +16,62 @@ class LoginView(View):
 
     def get(self,request):
         return render(request, self.template_name)
+
+# PROFILE Management
+class ProfileView(View):
+    template_name = 'tomake'
+    def get(self, request):
+        return HttpResponse('Viewing profile')
+
+class ChangeEmailView(View):
+    template_name = 'todo'
+
+    def get(self,request):
+        return HttpResponse('Change email')
+
+class ChangePasswordView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('Change password')
+
+class ChangeUsernameView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('Change username')
+
+
+#Dont know if these below are part of user functionalities can remove
+#Notification
+
+class NotificationView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('Viewing notification')
+
+
+#Deck
+class DeckCreateView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('creating deck')
+
+#Card
+class CardView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('viewing card')
+
+#Folder
+
+class FolderCreateView(View):
+    template_name = 'todo'
+
+    def get(self, request):
+        return HttpResponse('creating folder')
+
 
