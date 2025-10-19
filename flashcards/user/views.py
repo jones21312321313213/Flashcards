@@ -44,13 +44,13 @@ class ChangeUsernameView(View):
 
 #Dont know if these below are part of user functionalities can remove
 #Notification
-
-class NotificationView(View):
-    template_name = 'todo'
-
-    def get(self, request):
-        return HttpResponse('Viewing notification')
-
+# Gibalhin nakos notif - jm was here
+# class NotificationView(View):
+#     template_name = 'todo'
+#
+#     def get(self, request):
+#         return HttpResponse('Viewing notification')
+#
 
 #Deck
 class DeckCreateView(View):

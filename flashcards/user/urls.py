@@ -13,7 +13,8 @@ urlpatterns = [
 
     #Dont know if these below are part of user just remove them if not
     #Notification
-    path('notification/', views.NotificationView.as_view(), name='notification'),
+    #gibalhin ra nako - jm was here
+    # path('notification/', views.NotificationView.as_view(), name='notification'),
 
     #Deck
     path('deck/add', views.DeckCreateView.as_view(), name='deck'),
