@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('user.urls')),
     path('deck/', include('deck.urls')),
-    path('notifications/', include('notification.urls'))
+    path('notifications/', include('notification.urls')),
+    path('card/',include('card.urls'), name='card')
 ]

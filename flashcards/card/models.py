@@ -1,37 +1,39 @@
 from django.db import models
-
-from user.models import User
+from django.utils import timezone
 from deck.models import Deck
-# Create your models here.
+
 class Card(models.Model):
-    #card_type = (('B','Basic'),('I','Identification','IO','ImageOcclusion')) add this if needed
-    cardId = models.AutoField(primary_key=True) # or use cardId = models.IntegerField(primary_key=True)
+    class State(models.IntegerChoices):
+        NEW = 0
+        LEARNING = 1
+        REVIEW = 2
+        RELEARNING = 3
+
+    deck = models.ForeignKey(Deck, on_delete=models.CASCADE, related_name='cards')
+    stability = models.FloatField(default=0)
+    difficulty = models.FloatField(default=0)
+    state = models.IntegerField(choices=State.choices, default=State.NEW)
+    last_review = models.DateTimeField(null=True, blank=True)
+    next_review = models.DateTimeField(default=timezone.now)
+    step = models.IntegerField(null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
-    next_review = models.DateTimeField(auto_now=True)
-    input_field = models.CharField(max_length=200)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.cardId} {self.input_field} {self.created_at} {self.next_review} {self.user.username} {self.deck.name}"
+        return f"Card {self.id} (Due:{self.next_review:.2f})"
 
+    # Placeholder method to change the schedule based on a spaced-repetition algorithm
+    def update_schedule(self, performance_rating):
+        pass
 
-class Basic(Card):
-    back_field = models.CharField(max_length=200)
+class BasicCard(Card):
+    front_field = models.TextField()
+    back_field = models.TextField()
 
-    def __str__(self):
-        return f": {self.input_field} -> {self.back_field}"
+class IdentificationCard(Card):
+    front_field = models.TextField()
+    hidden_field = models.TextField()
 
-
-class Identification(Card):
-    hidden_field = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f" {self.input_field}  {self.hidden_field})"
-
-
-class ImageOcclusion(Card):
-    img_path = models.CharField(max_length=200)
-
-    def __str__(self):
-        return f"{self.input_field} {self.img_path}"
+class ImageOcclusionCard(Card):
+    front_field = models.TextField()
+    img_path = models.ImageField(upload_to='occlusion_images/')
