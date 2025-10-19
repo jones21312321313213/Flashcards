@@ -17,7 +17,8 @@ urlpatterns = [
     # path('notification/', views.NotificationView.as_view(), name='notification'),
 
     #Deck
-    path('deck/add', views.DeckCreateView.as_view(), name='deck'),
+    #moved to deck app
+    # path('deck/add', views.DeckCreateView.as_view(), name='deck'),
 
     #Card
     path('card/', views.CardView.as_view(), name='card'),
