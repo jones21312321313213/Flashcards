@@ -53,11 +53,11 @@ class ChangeUsernameView(View):
 #
 
 #Deck
-class DeckCreateView(View):
-    template_name = 'todo'
+# class DeckCreateView(View):
+#     template_name = 'todo'
 
-    def get(self, request):
-        return HttpResponse('creating deck')
+#     def get(self, request):
+#         return HttpResponse('creating deck')
 
 #Card
 class CardView(View):
