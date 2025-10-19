@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('user.urls')),
     path('deck/', include('deck.urls')),
     path('notifications/', include('notification.urls')),
-    path('card/',include('card.urls'), name='card')
+    path('card/',include('card.urls'), name='card'),
+    path('folder/',include('folder.urls'), name='folder'),
 ]
