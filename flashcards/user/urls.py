@@ -21,7 +21,8 @@ urlpatterns = [
     # path('deck/add', views.DeckCreateView.as_view(), name='deck'),
 
     #Card
-    path('card/', views.CardView.as_view(), name='card'),
+    # moved to card app
+    # path('card/', views.CardView.as_view(), name='card'),
 
     #Folder
     path('folder/add', views.FolderCreateView.as_view(), name='folder'),
