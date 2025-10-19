@@ -12,8 +12,8 @@ urlpatterns = [
 
 
     #Dont know if these below are part of user just remove them if not
-    #Notification
-    path('notification/', views.NotificationView.as_view(), name='notification'),
+
+    #Gibalhin ra nakos notifs - jm was here
 
     #Deck
     path('deck/add', views.DeckCreateView.as_view(), name='deck'),
