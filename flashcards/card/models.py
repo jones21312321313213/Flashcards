@@ -34,9 +34,7 @@ class BasicCard(Card):
     back_field = models.TextField()
 
 class IdentificationCard(Card):
-    front_field = models.TextField()
     hidden_field = models.TextField()
 
 class ImageOcclusionCard(Card):
-    front_field = models.TextField()
     img_path = models.ImageField(upload_to='occlusion_images/')
