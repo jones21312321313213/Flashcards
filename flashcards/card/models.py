@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from deck.models import Deck
+from user.models import User
+
 
 class Card(models.Model):
     class State(models.IntegerChoices):
@@ -10,6 +12,7 @@ class Card(models.Model):
         RELEARNING = 3
 
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE, related_name='cards')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     stability = models.FloatField(default=0)
     difficulty = models.FloatField(default=0)
     state = models.IntegerField(choices=State.choices, default=State.NEW)
